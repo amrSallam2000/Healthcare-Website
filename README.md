@@ -8,7 +8,18 @@ O'verio is a large-scale digital transformation platform that automated the comp
 
 **Technologies:** ASP.NET Web Forms, C#, MS SQL Server, HTML/CSS/JavaScript, IIS
 
+## Screenshots
 
+![Screenshot 01](images/image01.png)
+![Screenshot 02](images/image02.png)
+![Screenshot 03](images/image03.png)
+![Screenshot 04](images/image04.png)
+![Screenshot 05](images/image05.png)
+![Screenshot 06](images/image06.png)
+![Screenshot 07](images/image07.png)
+![Screenshot 08](images/image08.png)
+![Screenshot 09](images/image09.png)
+![Screenshot 10](images/image10.png)
 
 
 ---
@@ -178,3 +189,4 @@ FOR EACH PATIENT:
 
 ✅ **Conclusion**
 O'verio succeeded by focusing on **core workflows first**: fair scheduling, complete data, and administrative control. While communication features were architected for future implementation, the system delivered immediate value by solving the most critical pain points: chaotic queues and unfair access. The platform stands as a testament to **pragmatic software design**—building what's essential today while preparing for tomorrow's needs.
+
