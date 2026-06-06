@@ -53,7 +53,7 @@ Below is a visual guide to the O'verio platform, showcasing its key modules, use
 
 ### 6. System-Wide Rules & Configuration
 
-| ![System Rules Configuration](images/image10.png) |
+| ![System Rules Configuration](images/Image39.png) |
 | :------------------------------------------------: |
 | **Centralized Business Rules Configuration** <br/><br/> An administrative view into the constants that drive the `BookingLogic` engine. Here, authorized users can view/modify settings like `max monthly clinic bookings`, `cancellation limits`, and global `salary booking` toggles (`canbookSalaryOfficer`). This screen represents the shift from hardcoded rules to manageable configuration. |
 
