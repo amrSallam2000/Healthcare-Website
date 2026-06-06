@@ -27,19 +27,19 @@ Below is a visual guide to the O'verio platform, showcasing its key modules, use
 
 ### 2. Patient-Facing Booking & Management
 
-| ![Clinic Booking Interface](images/image02.png) | ![Patient Appointment Management](images/image03.png) |
+| ![Clinic Booking Interface](images/Image02.png) | ![Patient Appointment Management](images/Image15.png) |
 | :----------------------------------------------: | :----------------------------------------------------: |
 | **Rule-Enforced Clinic Booking** <br/><br/> Patients enter their Medical Number to initiate the `BookingLogic.ValidateBooking()` pipeline. The UI dynamically enforces *Rank-Based Day restrictions*, *Weekly/Monthly limits*, and displays real-time *Clinic Capacity* (Available/Limited/Critical/Full). | **My Appointments – Cancellation with Guardrails** <br/><br/> Patients view all future bookings (Clinic + Salary). The `AppointmentService` enforces the **2 cancellations/month** limit and the **30-hour prior** cutoff. Successful cancellations immediately free up capacity for others. |
 
 ### 3. Role-Based Dashboards & Administration
 
-| ![Role-Based Dashboard KPIs](images/image19.png) | ![Admin Settings – Clinic Configuration](images/image05.png) |
+| ![Role-Based Dashboard KPIs](images/Image23.png) | ![Admin Settings – Clinic Configuration](images/Image34.png) |
 | :----------------------------------------------: | :----------------------------------------------------------: |
 | **Real-Time Dashboard (Admin/User)** <br/><br/> Powered by `DashboardHub` (SignalR) pushing updates every 60 seconds. Provides instant KPIs: Total Appointments, Pending Registration Requests, Cancellation Rates, and average waiting times. Data sourced from optimized `DashboardRepository` SQL aggregations. | **Admin Control – Clinic & Working Days** <br/><br/> Authorized personnel (Admin only) manage the core entities. Here, `ClinicSettings.aspx` allows CRUD on clinics, capacity adjustments, and activation status. `ClinicWorkingDays.aspx` maps each clinic's `schedule_clinc` (Arabic days) to specific rank categories, a key part of the fairness algorithm. |
 
 ### 4. The Core Booking Engine (Complex Transactions)
 
-| ![Medication (Salary) Booking](images/image26.png) | ![Registration Request Management](images/image07.png) |
+| ![Medication (Salary) Booking](images/Image06.png) | ![Registration Request Management](images/Image13.png) |
 | :------------------------------------------------: | :----------------------------------------------------: |
 | **Salary (Medication) Dispensing System** <br/><br/> A critical, high-complexity module. The UI enforces *Officer (Even months) vs. Enlisted (Odd months)* rules, checks `settings` table for global toggles, and handles the special **"Catch-up"** logic for patients who missed their primary window. All booked via a **Serializable** transaction to ensure data integrity. | **Patient Registration Request Workflow** <br/><br/> The streamlined onboarding portal. New patients submit required data (Name, 14-digit National ID, 11-digit `01` Phone). Admin uses `RequestsManagement.aspx` to review, de-duplicate using the **Merge Tool**, and approve. This ensures **100% data completeness** (National ID & Phone) for future communication. |
 
@@ -47,7 +47,7 @@ Below is a visual guide to the O'verio platform, showcasing its key modules, use
 
 *These screenshots showcase the system's crown jewel – a real-time, NLog-powered Operations Center for Admins, built with SignalR.*
 
-| ![LogDashboard – Live Overview](images/image08.png) | ![LogDashboard – Advanced Log Search](images/image09.png) |
+| ![LogDashboard – Live Overview](images/Image20.png) | ![LogDashboard – Advanced Log Search](images/Image22.png) |
 | :-------------------------------------------------: | :------------------------------------------------------: |
 | **Operations Center – Real-Time System Health** <br/><br/> Accessible only via `CheckSessionForAdmin()`. This dashboard, powered by `LogHub`, `LogReaderService`, and `SecurityWatcherService`, provides live metrics from NLog files. Displays *Active User Sessions*, *Request Error Rates*, *Performance Warnings* (>5 sec), and *Security Alerts* (e.g., brute force detection). | **Advanced Log Tracing & Search** <br/><br/> The `Search` function queries all log files (`SystemLog`, `Errors`, `Requests`, `Performance`, etc.) with caching for performance. The **`GetRequestTrace`** feature reconstructs the entire lifecycle of a single `RequestId`, showing its path through `Application_BeginRequest` to `PostRequestHandlerExecute`. Invaluable for debugging. |
 
