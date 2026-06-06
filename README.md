@@ -21,7 +21,7 @@ Below is a visual guide to the O'verio platform, showcasing its key modules, use
 
 ### 1. The Public Face & Multi-Channel Access
 
-| ![Public Homepage & Quick Actions](images/image14.png) |
+| ![Public Homepage & Quick Actions](images/Image.png) |
 | :------------------------------------------------------: |
 | **Public Homepage & Smart Entry Points** <br/><br/> The system's landing page provides immediate, role-less access to core actions. *Key features:* direct buttons for Clinic Booking, Medication (Salary) Booking, Appointment Tracking, and Complaint Submission. The design prioritizes the **2-Week Rolling Window** for clinics, ensuring patients see only actionable dates. |
 
